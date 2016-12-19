@@ -28,10 +28,16 @@ using std::ostringstream;
 using std::tuple;
 #include "Other/AcfDelegate.h"
 using Acf::Delegate;
+#include "SDL_syswm.h"
 #include "SDL.h"
 #include "bgfx/platform.h"
 #include "bgfx/bgfx.h"
+#include "bx/thread.h"
+#include "silly/LifeCycledSingleton.h"
+#include "silly/Slice.h"
+using silly::Slice;
 #include "Common/oHelper.h"
+#include "Const/oDefine.h"
 #include "Lua/oLuaHelper.h"
 #include "Basic/oObject.h"
 #include "Common/oRef.h"
@@ -40,5 +46,8 @@ using Acf::Delegate;
 #include "Common/oOwnVector.h"
 #include "Common/oWRef.h"
 #include "Common/oWRefVector.h"
+#include "Common/oDebug.h"
+#include "Basic/oAutoreleasePool.h"
+#include "Basic/oContent.h"
 
-#endif // __DOROTHY_CONST_ODEFINE_H__
+#endif // __DOROTHY_CONST_OHEADER_H__
