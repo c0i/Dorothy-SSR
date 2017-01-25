@@ -21,4 +21,44 @@ const float Matrix::Indentity[16] = {
 	0, 0, 0, 1
 };
 
+Flag::Flag(Uint32 flags):_flags(flags)
+{ }
+
+void Flag::setOn(Uint32 type)
+{
+	_flags |= type;
+}
+
+void Flag::setOff(Uint32 type)
+{
+	_flags &= ~type;
+}
+
+void Flag::setFlag(Uint32 type, bool value)
+{
+	if (value)
+	{
+		_flags |= type;
+	}
+	else
+	{
+		_flags &= ~type;
+	}
+}
+
+void Flag::toggle(Uint32 type)
+{
+	setFlag(type, !isOn(type));
+}
+
+bool Flag::isOn(Uint32 type) const
+{
+	return (_flags & type) != 0;
+}
+
+bool Flag::isOff(Uint32 type) const
+{
+	return (_flags & type) == 0;
+}
+
 NS_DOROTHY_END
