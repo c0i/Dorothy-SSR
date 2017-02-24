@@ -30,7 +30,7 @@ private:
 		RefVector<Object> _managedObjects;
 	};
 	stack<Ref<AutoreleasePool>> _releasePoolStack;
-	SINGLETON(PoolManager, "ObjectBase");
+	SINGLETON_REF(PoolManager, ObjectBase);
 };
 
 #define SharedPoolManager \
